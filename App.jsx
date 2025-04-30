@@ -60,9 +60,9 @@ export default function App() {
         {gameWon && (
             <Confetti
                 recycle={false}
-                numberOfPieces={300} // 15% more than default (~260)
+                numberOfPieces={350} // 15% more than default (~260)
                 gravity={0.15} // 50% faster fall (default: 0.1)
-                initialVelocityY={12} // 20% faster launch (default: 10)
+                initialVelocityY={15} // 20% faster launch (default: 10)
                 tweenDuration={4000} // 20% shorter animation (default: 5000ms)
                 colors={['#FF5252', '#FFEB3B', '#4CAF50', '#2196F3', '#9C27B0', '#FF9800']}
             />
