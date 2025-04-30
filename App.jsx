@@ -55,20 +55,28 @@ export default function App() {
         />
     ))
 
-    return (
-        <main>
-            {gameWon && <Confetti />}
-            <div aria-live="polite" className="sr-only">
-                {gameWon && <p>Congratulations! You won! Press "New Game" to start again.</p>}
-            </div>
-            <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-            <div className="dice-container">
-                {diceElements}
-            </div>
-            <button ref={buttonRef} className="roll-dice" onClick={rollDice}>
-                {gameWon ? "New Game" : "Roll"}
-            </button>
-        </main>
-    )
-}
+   return (
+    <main>
+        {gameWon && (
+            <Confetti
+                recycle={false}
+                numberOfPieces={300} // 15% more than default (~260)
+                gravity={0.15} // 50% faster fall (default: 0.1)
+                initialVelocityY={12} // 20% faster launch (default: 10)
+                tweenDuration={4000} // 20% shorter animation (default: 5000ms)
+                colors={['#FF5252', '#FFEB3B', '#4CAF50', '#2196F3', '#9C27B0', '#FF9800']}
+            />
+        )}
+        <div aria-live="polite" className="sr-only">
+            {gameWon && <p>Congratulations! You won! Press "New Game" to start again.</p>}
+        </div>
+        <h1 className="title">Tenzies</h1>
+        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        <div className="dice-container">
+            {diceElements}
+        </div>
+        <button ref={buttonRef} className="roll-dice" onClick={rollDice}>
+            {gameWon ? "New Game" : "Roll"}
+        </button>
+    </main>
+)
