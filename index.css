@@ -36,7 +36,6 @@ main {
   align-items: center;
   gap: 20px;
   position: relative;
-  box-shadow: 0 0 0 4px red; /* TEMP - confirm centering */
 }
 
 /* Keep all your existing styles below exactly as they were */
@@ -58,7 +57,7 @@ main {
 
 .dice-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   margin: 20px 0;
 }
